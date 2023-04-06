@@ -1,8 +1,8 @@
 ﻿using Assembly.MusicApp.Domain.Model;
 
-namespace Assembly.MusicApp.Services
+namespace Assembly.MusicApp.Data
 {
-    public interface IUserService
+    public interface IUserRepository
     {
         List<User> GetAll();
     }

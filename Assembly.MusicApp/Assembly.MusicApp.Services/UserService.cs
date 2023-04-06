@@ -1,10 +1,20 @@
-﻿namespace Assembly.MusicApp.Services
+﻿using Assembly.MusicApp.Data;
+using Assembly.MusicApp.Domain.Model;
+
+namespace Assembly.MusicApp.Services
 {
     public class UserService : IUserService
     {
-        public string GetAll()
+        private readonly IUserRepository _userRepository;
+
+        public UserService(IUserRepository userRepository)
         {
-            return "Get all";
+            this._userRepository = userRepository;
+        }
+
+        public List<User> GetAll()
+        {
+            return _userRepository.GetAll();
         }
     }
 }

@@ -7,6 +7,7 @@ serviceCollection.AddSingleton<Start>();
 //serviceCollection.AddSingleton<Start>(x => new Start()); // TODO: speak
 
 serviceCollection.AddSingleton<IUserService, UserService>();
+//serviceCollection.AddScoped<IUserRepository, UserRepository>();
 
 var serviceProvider = serviceCollection.BuildServiceProvider();
 
