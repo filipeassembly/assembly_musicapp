@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Assembly.MusicApp.Data\Assembly.MusicApp.Data.csproj" />
     <ProjectReference Include="..\Assembly.MusicApp.Services\Assembly.MusicApp.Services.csproj" />
   </ItemGroup>
 

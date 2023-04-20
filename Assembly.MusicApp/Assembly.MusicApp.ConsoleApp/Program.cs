@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 var serviceCollection = new ServiceCollection();
 serviceCollection.AddSingleton<Start>();
 //serviceCollection.AddSingleton<Start>(x => new Start()); // TODO: speak
-
+Configure(serviceCollection);
 serviceCollection.AddSingleton<IUserService, UserService>();
 //serviceCollection.AddScoped<IUserRepository, UserRepository>();
 

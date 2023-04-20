@@ -1,10 +1,14 @@
+using Assembly.MusicApp.Data;
 using Assembly.MusicApp.Services;
+using Assembly.MusicApp.Services.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepo>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 var app = builder.Build();
 

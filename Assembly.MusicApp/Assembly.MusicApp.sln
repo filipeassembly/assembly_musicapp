@@ -25,9 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{9D9D4F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{614867DB-8F68-4A9C-A5FD-1541BEFE4338}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.MusicApp.DataMsSql", "Assembly.MusicApp.DataMsSql\Assembly.MusicApp.DataMsSql.csproj", "{FBE314A2-F7E5-4952-9B60-2DE5FBCB7737}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.MusicApp.DataMsSql", "Assembly.MusicApp.DataMsSql\Assembly.MusicApp.DataMsSql.csproj", "{FBE314A2-F7E5-4952-9B60-2DE5FBCB7737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.MusicApp.Domain.Core", "Assembly.MusicApp.Domain.Core\Assembly.MusicApp.Domain.Core.csproj", "{67DE5E6D-877B-496A-90D7-45308BECEE68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly.MusicApp.Domain.Core", "Assembly.MusicApp.Domain.Core\Assembly.MusicApp.Domain.Core.csproj", "{67DE5E6D-877B-496A-90D7-45308BECEE68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly.MusicApp.IoC", "Assembly.MusicApp.IoC\Assembly.MusicApp.IoC.csproj", "{3468FF55-464F-4D8B-9D8C-9C044A445D45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{67DE5E6D-877B-496A-90D7-45308BECEE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67DE5E6D-877B-496A-90D7-45308BECEE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67DE5E6D-877B-496A-90D7-45308BECEE68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3468FF55-464F-4D8B-9D8C-9C044A445D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3468FF55-464F-4D8B-9D8C-9C044A445D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3468FF55-464F-4D8B-9D8C-9C044A445D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3468FF55-464F-4D8B-9D8C-9C044A445D45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{549E259F-24E0-40E9-9525-7C72235B4F74} = {7D4FE0B7-AEEB-4E61-8B9C-A188C917C3BA}
 		{FBE314A2-F7E5-4952-9B60-2DE5FBCB7737} = {614867DB-8F68-4A9C-A5FD-1541BEFE4338}
 		{67DE5E6D-877B-496A-90D7-45308BECEE68} = {9D9D4FA8-616F-42FA-B51F-6463EF7FE015}
+		{3468FF55-464F-4D8B-9D8C-9C044A445D45} = {614867DB-8F68-4A9C-A5FD-1541BEFE4338}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE1F6E6D-0E4D-422D-89A3-07138287FD92}

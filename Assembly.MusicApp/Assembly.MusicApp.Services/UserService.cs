@@ -1,5 +1,5 @@
-﻿using Assembly.MusicApp.Data;
-using Assembly.MusicApp.Domain.Model;
+﻿using Assembly.MusicApp.Domain.Model;
+using Assembly.MusicApp.Services.Contracts;
 
 namespace Assembly.MusicApp.Services
 {

@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Assembly.MusicApp.Data\Assembly.MusicApp.Data.csproj" />
     <ProjectReference Include="..\Assembly.MusicApp.Domain\Assembly.MusicApp.Domain.csproj" />
   </ItemGroup>
 
