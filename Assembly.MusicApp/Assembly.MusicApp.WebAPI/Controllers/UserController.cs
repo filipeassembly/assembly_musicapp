@@ -1,8 +1,8 @@
 ﻿using Assembly.MusicApp.Domain.Model;
 using Assembly.MusicApp.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Assembly.MusicApp.WebAPI.Controllers
 {
@@ -27,8 +27,18 @@ namespace Assembly.MusicApp.WebAPI.Controllers
         }
 
         [HttpPost("login")]
-        public bool Login(AccountRequest request)
+        public IActionResult Login(AccountRequest request)
         {
+            if (ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            new AccountRequest()
+            {
+                UserName = "",
+                Age = -23
+            }
             return _accountService.Login(request.UserName, request.Password);
         }
     }
@@ -37,6 +47,18 @@ namespace Assembly.MusicApp.WebAPI.Controllers
 
 public class AccountRequest
 {
+    [Required]
+    [MaxLength(255)]
+
     public string UserName { get; set; }
     public string Password { get; set; }
 }
+
+/*
+ * 
+ * {
+ *  "usename": "fcoelho",
+ *  "password" : "12345"
+ * }
+ * 
+ * /

@@ -2,9 +2,8 @@
 
 namespace Assembly.MusicApp.Services.Contracts
 {
-    public interface IUserRepository
+    public interface IUserRepository : IRepository<User>
     {
-        List<User> GetAll();
         bool Login(string username, string password);
     }
 }

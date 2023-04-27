@@ -1,4 +1,4 @@
-﻿namespace Assembly.MusicApp.Services
+﻿namespace Assembly.MusicApp.Services.Contracts
 {
     public interface IAccountService
     {

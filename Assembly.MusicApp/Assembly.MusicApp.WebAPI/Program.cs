@@ -1,6 +1,4 @@
-using Assembly.MusicApp.Data;
-using Assembly.MusicApp.Services;
-using Assembly.MusicApp.Services.Contracts;
+using Assembly.MusicApp.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 //    .AddCookie();
 
 // Add services to the container.
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IUserRepository, UserRepo>();
-builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.ConfigureWebApi();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

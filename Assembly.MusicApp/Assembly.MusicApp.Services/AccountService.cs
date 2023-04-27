@@ -2,7 +2,7 @@
 
 namespace Assembly.MusicApp.Services
 {
-    public class AccountService: IAccountService
+    public class AccountService : IAccountService
     {
         private readonly IUserRepository _userRepository;
 
@@ -13,11 +13,11 @@ namespace Assembly.MusicApp.Services
 
         public bool Login(string username, string password)
         {
-            if(string.IsNullOrEmpty(username))
+            if (string.IsNullOrEmpty(username))
             {
                 return false;
             }
-            
+
             return _userRepository.Login(username, password);
         }
     }

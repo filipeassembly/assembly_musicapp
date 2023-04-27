@@ -16,9 +16,44 @@ namespace Assembly.MusicApp.Data
             });
         }
 
+        public Account Add(Account entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Account Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Account Delete(Account entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<User> GetAll()
         {
             return new List<User>(_list);
+        }
+
+        public Account GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Login(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Account Update(Account entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Account> IRepository<Account>.GetAll()
+        {
+            throw new NotImplementedException();
         }
     }
 }

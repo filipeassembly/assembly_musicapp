@@ -1,14 +1,14 @@
-using Assembly.MusicApp.Data;
-using Assembly.MusicApp.Services;
-using Assembly.MusicApp.Services.Contracts;
+using Assembly.MusicApp.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IUserRepository, UserRepo>();
-builder.Services.AddScoped<IAccountService, AccountService>();
+
+builder.Services.ConfigureWebApp();
+
 
 var app = builder.Build();
 
@@ -27,6 +27,19 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+//app.Use(async (context, next) =>
+//{
+//    using var stream = context.Request.Body; // {"username": ""}
+
+//    string x = await stream.Read();
+
+//   var user = JsonSerializer.Serialize<AccountRequest>(x);
+//    return;
+
+//    return next();
+//}
+//)
 
 app.MapRazorPages();
 
