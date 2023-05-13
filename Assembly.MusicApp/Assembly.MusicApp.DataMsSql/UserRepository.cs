@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace Assembly.MusicApp.DataMsSql
 {
-    internal class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
 
         private readonly string _tableName = "Users";
@@ -14,10 +14,6 @@ namespace Assembly.MusicApp.DataMsSql
         {
             throw new NotImplementedException();
         }
-
-
-
-
 
         public User Delete(User entity)
         {
@@ -37,9 +33,9 @@ namespace Assembly.MusicApp.DataMsSql
             cmd.CommandText = query;
 
             SqlDataReader dr = cmd.ExecuteReader();
-            while(dr.Read())
+            while (dr.Read())
             {
-                int id = (int)dr["Id"]; 
+                int id = (int)dr["Id"];
                 string name = (string)dr["Name"];
                 string description = (string)dr["Description"];
                 int age = (int)dr["Age"];
@@ -55,8 +51,6 @@ namespace Assembly.MusicApp.DataMsSql
             return list;
         }
 
-
-
         public bool Login(string username, string password)
         {
             if (string.IsNullOrEmpty(username))
@@ -67,8 +61,6 @@ namespace Assembly.MusicApp.DataMsSql
             return true;
         }
 
-
-
         public User Update(User entity)
         {
             throw new NotImplementedException();
@@ -78,8 +70,6 @@ namespace Assembly.MusicApp.DataMsSql
         {
             throw new NotImplementedException();
         }
-
-
 
         User IRepository<User>.GetById(int id)
         {

@@ -1,5 +1,6 @@
 ﻿using Assembly.MusicApp.Domain.Model;
-using Assembly.MusicApp.Services;
+using Assembly.MusicApp.Services.Contracts;
+using Assembly.MusicApp.Services.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,6 @@ namespace Assembly.MusicApp.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Policy = "admin")] // Roles
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -21,10 +21,30 @@ namespace Assembly.MusicApp.WebAPI.Controllers
         }
 
         [HttpGet]
-        public List<User> Get()
+        public List<UserDto> Get()
         {
             return _userService.GetAll();
         }
+
+
+        [HttpPost("one")]
+        public void PostOne([FromQuery]string xpto)
+        {
+
+        }
+
+        [HttpPost("two")]
+        public void PostTwo([FromBody] XptoDto xpto)
+        {
+
+        }
+
+        [HttpPost("recipe/{recipeId}/ingredientId")]
+        public void PostThree(string xpto)
+        {
+
+        }
+
 
         [HttpPost("login")]
         public IActionResult Login(AccountRequest request)
@@ -34,15 +54,23 @@ namespace Assembly.MusicApp.WebAPI.Controllers
                 return BadRequest();
             }
 
-            new AccountRequest()
-            {
-                UserName = "",
-                Age = -23
-            }
-            return _accountService.Login(request.UserName, request.Password);
+            //new AccountRequest()
+            //{
+            //    UserName = "",
+            //    Age = -23
+            //};
+
+            //return _accountService.Login(request.UserName, request.Password);
+            return null;
         }
     }
+    public class XptoDto
+    {
+        public string Xpto { get; set; }
+    }
 }
+
+
 
 
 public class AccountRequest
@@ -61,4 +89,4 @@ public class AccountRequest
  *  "password" : "12345"
  * }
  * 
- * /
+ */

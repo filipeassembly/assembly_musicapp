@@ -1,4 +1,5 @@
-﻿using Assembly.MusicApp.Data;
+﻿
+using Assembly.MusicApp.DataMsSql;
 using Assembly.MusicApp.Services;
 using Assembly.MusicApp.Services.Contracts;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,11 +32,11 @@ namespace Assembly.MusicApp.IoC
         private static void ConfigureCommon(this IServiceCollection serviceCollection)
         {
             // Add services to the container.
-            serviceCollection.AddTransient<IUserService, UserService>();
-            serviceCollection.AddSingleton<IUserService, UserService>();
+            serviceCollection.AddScoped<IUserService, UserService>();
+            serviceCollection.AddScoped<IUserService, UserService>();
 
             serviceCollection.AddScoped<IUserService, UserService>();
-            serviceCollection.AddScoped<IUserRepository, UserRepo>();
+            serviceCollection.AddScoped<IUserRepository, UserRepository>();
             serviceCollection.AddScoped<IAccountService, AccountService>();
         }
     }

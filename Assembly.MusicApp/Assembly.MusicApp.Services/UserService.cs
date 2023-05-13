@@ -1,7 +1,5 @@
-﻿using Assembly.MusicApp.Domain.Model;
-using Assembly.MusicApp.Services.Contracts;
+﻿using Assembly.MusicApp.Services.Contracts;
 using Assembly.MusicApp.Services.Dtos;
-using System.Text.Json;
 
 namespace Assembly.MusicApp.Services
 {
@@ -22,15 +20,13 @@ namespace Assembly.MusicApp.Services
 
             foreach (var item in entities)
             {
-                var imaageBase64 = "_blobService.GetImage(item.Id)";
+                
                 dtos.Add(new UserDto()
                 {
                     Id = item.Id,
                     Name = item.Name,
                     Description = item.Description,
-                    Image = imaageBase64,
-                    Specialities = item.Specialities,
-                    Username = item.Account.Username
+                    Username = ""
                 });
             }
 
@@ -43,7 +39,7 @@ namespace Assembly.MusicApp.Services
 
             var dtos = new List<UserDto>();
 
-
+            return null;
         }
 
         public UserDto GetById(int id)
@@ -53,9 +49,7 @@ namespace Assembly.MusicApp.Services
 
         public UserDto Add(UserDto dto)
         {
-            User user = JsonSerializer.Deserialize<User>("{}");
 
-            string json = JsonSerializer.Serialize(new User());
 
 
             return null;
@@ -71,6 +65,6 @@ namespace Assembly.MusicApp.Services
             throw new NotImplementedException();
         }
 
-        
+
     }
 }

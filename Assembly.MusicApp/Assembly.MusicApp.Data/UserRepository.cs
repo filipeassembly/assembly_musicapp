@@ -17,7 +17,20 @@ namespace Assembly.MusicApp.Data
             });
         }
 
-        
+        public User Add(User entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User Delete(User entity)
+        {
+            throw new NotImplementedException();
+        }
 
         public List<User> GetAll()
         {
@@ -25,21 +38,6 @@ namespace Assembly.MusicApp.Data
         }
 
         public User GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Account Add(Account entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Account Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Account Delete(Account entity)
         {
             throw new NotImplementedException();
         }
@@ -62,17 +60,7 @@ namespace Assembly.MusicApp.Data
             return false;
         }
 
-        public Account Update(Account entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Account> IRepository<Account>.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        Account IRepository<Account>.GetById(int id)
+        public User Update(User entity)
         {
             throw new NotImplementedException();
         }

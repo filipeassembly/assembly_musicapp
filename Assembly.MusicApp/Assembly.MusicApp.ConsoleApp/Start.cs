@@ -1,4 +1,4 @@
-﻿using Assembly.MusicApp.Services;
+﻿using Assembly.MusicApp.Services.Contracts;
 
 namespace Assembly.MusicApp.ConsoleApp
 {

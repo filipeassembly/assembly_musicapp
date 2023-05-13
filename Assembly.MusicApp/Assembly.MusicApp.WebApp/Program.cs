@@ -9,6 +9,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.ConfigureWebApp();
 
+//ConfigureServices.ConfigureWebApp(builder.Services);
 
 var app = builder.Build();
 
@@ -27,19 +28,6 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
-//app.Use(async (context, next) =>
-//{
-//    using var stream = context.Request.Body; // {"username": ""}
-
-//    string x = await stream.Read();
-
-//   var user = JsonSerializer.Serialize<AccountRequest>(x);
-//    return;
-
-//    return next();
-//}
-//)
 
 app.MapRazorPages();
 

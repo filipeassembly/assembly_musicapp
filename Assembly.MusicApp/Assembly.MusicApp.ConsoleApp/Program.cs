@@ -1,6 +1,7 @@
 ﻿using Assembly.MusicApp.ConsoleApp;
 using Assembly.MusicApp.IoC;
 using Assembly.MusicApp.Services;
+using Assembly.MusicApp.Services.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 
 var serviceCollection = new ServiceCollection();

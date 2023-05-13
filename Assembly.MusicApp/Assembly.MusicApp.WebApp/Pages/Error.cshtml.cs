@@ -23,5 +23,10 @@ namespace Assembly.MusicApp.WebApp.Pages
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
+
+        public void OnPost()
+        {
+
+        }
     }
 }

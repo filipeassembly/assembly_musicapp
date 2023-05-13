@@ -7,8 +7,6 @@ namespace Assembly.MusicApp.Services.Dtos
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Image { get; set; }
-        public IList<Speciality> Specialities { get; set; }
         public string Username { get; set; }
     }
 

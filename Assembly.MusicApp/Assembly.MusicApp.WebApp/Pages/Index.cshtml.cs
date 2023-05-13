@@ -1,4 +1,6 @@
-﻿using Assembly.MusicApp.Services;
+﻿using Assembly.MusicApp.Services.Contracts;
+using Assembly.MusicApp.Services.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Assembly.MusicApp.WebApp.Pages
@@ -7,16 +9,26 @@ namespace Assembly.MusicApp.WebApp.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly IUserService _userService;
+        public List<UserDto> Users { get; set; }
+
 
         public IndexModel(ILogger<IndexModel> logger, IUserService userService)
         {
             _logger = logger;
             this._userService = userService;
+
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            var str = _userService.GetAll();
+            Users = _userService.GetAll();
+            return RedirectToPage("ThankYou");
+        }
+
+        public IActionResult OnPost()
+        {
+            Users = _userService.GetAll();
+            return RedirectToPage("ThankYou");
         }
     }
 }

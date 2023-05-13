@@ -2,13 +2,6 @@ using Assembly.MusicApp.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddAuthentication(options =>
-//{
-//    options.AddScheme<>
-//}
-//)
-//    .AddCookie();
-
 // Add services to the container.
 builder.Services.ConfigureWebApi();
 
@@ -27,6 +20,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
 
 app.UseAuthorization();
 
