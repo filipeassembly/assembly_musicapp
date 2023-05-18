@@ -19,16 +19,16 @@ namespace Assembly.MusicApp.WebApp.Pages
 
         }
 
-        public IActionResult OnGet()
+        public void OnGet()
         {
             Users = _userService.GetAll();
-            return RedirectToPage("ThankYou");
+            //return OkResult("");
+            //return RedirectToPage("ThankYou");
         }
 
-        public IActionResult OnPost()
+        public void OnPost()
         {
-            Users = _userService.GetAll();
-            return RedirectToPage("ThankYou");
+            
         }
     }
 }

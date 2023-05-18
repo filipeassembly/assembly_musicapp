@@ -1,4 +1,5 @@
-﻿using Assembly.MusicApp.Services.Contracts;
+﻿using Assembly.MusicApp.Domain.Model;
+using Assembly.MusicApp.Services.Contracts;
 using Assembly.MusicApp.Services.Dtos;
 
 namespace Assembly.MusicApp.Services
@@ -20,13 +21,12 @@ namespace Assembly.MusicApp.Services
 
             foreach (var item in entities)
             {
-                
+
                 dtos.Add(new UserDto()
                 {
                     Id = item.Id,
                     Name = item.Name,
                     Description = item.Description,
-                    Username = ""
                 });
             }
 
@@ -47,12 +47,32 @@ namespace Assembly.MusicApp.Services
             throw new NotImplementedException();
         }
 
-        public UserDto Add(UserDto dto)
+        public bool Add(UserDto dto)
         {
+            if (dto is null)
+            {
+                return false;
+            }
 
+            if (string.IsNullOrEmpty(dto.Name) || dto.Name.Length < 3)
+            {
+                return false;
+            }
+            
+            if (!_userRepository.IsEmailUnique(dto.Email))
+            {
+                return false;
+            }
 
+            User user = new User()
+            {
+                Name = dto.Name,
+                Email = dto.Email,
+                Age = dto.Age,
+                Description = dto.Description
+            };
 
-            return null;
+            return _userRepository.Add(user) is not null;
         }
 
         public UserDto Update(UserDto dto)

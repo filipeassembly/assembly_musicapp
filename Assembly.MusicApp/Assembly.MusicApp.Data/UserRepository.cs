@@ -42,6 +42,16 @@ namespace Assembly.MusicApp.Data
             throw new NotImplementedException();
         }
 
+        public User GetUserByEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsEmailUnique(string email)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Login(string username, string password)
         {
             if (string.IsNullOrEmpty(username))

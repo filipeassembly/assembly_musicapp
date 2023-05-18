@@ -12,7 +12,22 @@ namespace Assembly.MusicApp.DataMsSql
 
         public User Add(User entity)
         {
-            throw new NotImplementedException();
+            // TODO: INSERT and Id filled
+
+            using SqlConnection conn = new SqlConnection(_cs);
+
+            conn.Open();
+
+            string query = @$" INSERT INTO Users (Name, Email, Description, Age)
+                               VALUES ('{entity.Name}', '{entity.Email}', '{entity.Description}', {entity.Age});
+                               Select SCOPE_IDENTITY() 'SCOPE_IDENTITY'";
+            using SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = query;
+
+            decimal id = (decimal)cmd.ExecuteScalar() ;
+            entity.Id = (int)id; 
+
+            return entity;
         }
 
         public User Delete(User entity)
@@ -49,6 +64,42 @@ namespace Assembly.MusicApp.DataMsSql
             }
 
             return list;
+        }
+
+        public User GetUserByEmail(string email)
+        {
+            using SqlConnection conn = new SqlConnection(_cs);
+
+            conn.Open();
+
+            string query = $"SELECT * FROM {_tableName} WHERE Email='{email}'";
+            using SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = query;
+
+            User user = null;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                int id = (int)dr["Id"];
+                string name = (string)dr["Name"];
+                string description = (string)dr["Description"];
+                int age = (int)dr["Age"];
+                user = new User()
+                {
+                    Id = id,
+                    Name = name,
+                    Description = description,
+                    Age = age
+                };
+            }
+
+            return user;
+        }
+
+        public bool IsEmailUnique(string email)
+        {
+            return GetUserByEmail(email) is null;
         }
 
         public bool Login(string username, string password)

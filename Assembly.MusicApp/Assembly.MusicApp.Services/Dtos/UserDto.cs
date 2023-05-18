@@ -6,22 +6,8 @@ namespace Assembly.MusicApp.Services.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Email { get; set; }
         public string Description { get; set; }
-        public string Username { get; set; }
-    }
-
-    public class CreateUserDto
-    {
-
-    }
-
-    public class RequestDeleteUserDto
-    {
-        public int Id { get; set; }
-    }
-
-    public class ResponseDeleteUserDto
-    {
-        public UserDto User { get; set; }
+        public int Age { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace Assembly.MusicApp.Services.Contracts
         List<UserDto> GetAll();
         List<UserDto> GetAllWithAccounts();
         UserDto GetById(int id);
-        UserDto Add(UserDto dto);
+        bool Add(UserDto dto);
         UserDto Update(UserDto dto);
         UserDto Delete(int id);
     }

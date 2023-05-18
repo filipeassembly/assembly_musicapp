@@ -33,9 +33,7 @@ namespace Assembly.MusicApp.IoC
         {
             // Add services to the container.
             serviceCollection.AddScoped<IUserService, UserService>();
-            serviceCollection.AddScoped<IUserService, UserService>();
 
-            serviceCollection.AddScoped<IUserService, UserService>();
             serviceCollection.AddScoped<IUserRepository, UserRepository>();
             serviceCollection.AddScoped<IAccountService, AccountService>();
         }

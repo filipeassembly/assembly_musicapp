@@ -26,7 +26,6 @@ namespace Assembly.MusicApp.WebAPI.Controllers
             return _userService.GetAll();
         }
 
-
         [HttpPost("one")]
         public void PostOne([FromQuery]string xpto)
         {

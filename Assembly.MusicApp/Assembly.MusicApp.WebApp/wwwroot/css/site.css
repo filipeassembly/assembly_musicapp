@@ -2,6 +2,15 @@ html {
   font-size: 14px;
 }
 
+
+h1 {
+    color: red;
+}
+
+.forms-container > h1 {
+    color: green;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
